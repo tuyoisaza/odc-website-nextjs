@@ -1,0 +1,46 @@
+{
+  "Index": {
+    "title": "O crescimento é um {system}, não uma tática.",
+    "subtitle": "A ODC é uma consultoria estratégica que projeta e ativa sistemas de crescimento. Somos arquitetos do modelo, integrando estratégia, tecnologia e execução.",
+    "cta": "Nossos Serviços"
+  },
+  "Services": {
+    "title": "{services} de Consultoria",
+    "strategicGrowth": "Crescimento Estratégico",
+    "strategicGrowthDesc": "Definição e ativação de modelos para expandir a participação de mercado.",
+    "digitalTransformation": "Transformação Digital e IA",
+    "digitalTransformationDesc": "Inovação baseada em tecnologias cognitivas para operações inteligentes.",
+    "brandStrategy": "Estratégia de Marca",
+    "brandStrategyDesc": "Construindo narrativas poderosas e marketing centrado no consumidor.",
+    "innovationEcosystems": "Ecossistemas de Inovação",
+    "innovationEcosystemsDesc": "Plataformas escaláveis para acelerar o crescimento multisetorial."
+  },
+  "Insights": {
+    "title": "{insights} Estratégicos",
+    "subtitle": "Pensamento sistêmico e estruturas conceituais para líderes digitais.",
+    "readMore": "Ler Artigo"
+  },
+  "Clients": {
+    "title": "Nossos {partners}"
+  },
+  "Contact": {
+    "title": "Vamos falar sobre {systems}.",
+    "subtitle": "Projetamos modelos de crescimento que funcionam. Preencha o formulário para iniciar uma conversa estratégica.",
+    "name": "Nome Completo",
+    "email": "Endereço de E-mail",
+    "company": "Empresa / Organização",
+    "context": "Breve Contexto de Crescimento",
+    "send": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "success": "Obrigado por nos contatar!",
+    "successDesc": "Nossa equipe sênior revisará sua mensagem e entrará em contato em breve.",
+    "backHome": "Voltar ao Início",
+    "error": "Ocorreu um erro. Por favor, tente novamente."
+  },
+  "Navbar": {
+    "services": "Serviços",
+    "insights": "Insights",
+    "clients": "Clientes",
+    "cta": "Fale Conosco"
+  }
+}

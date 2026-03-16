@@ -1,0 +1,46 @@
+{
+  "Index": {
+    "title": "El crecimiento es un {system}, no una táctica.",
+    "subtitle": "ODC es una firma de consultoría estratégica que diseña y activa sistemas de crecimiento. Somos arquitectos del modelo, integrando estrategia, tecnología y ejecución.",
+    "cta": "Nuestros Servicios"
+  },
+  "Services": {
+    "title": "{services} de Consultoría",
+    "strategicGrowth": "Crecimiento Estratégico",
+    "strategicGrowthDesc": "Definición y activación de modelos para expandir participación de mercado.",
+    "digitalTransformation": "Transformación Digital e IA",
+    "digitalTransformationDesc": "Innovación basada en tecnologías cognitivas para operaciones inteligentes.",
+    "brandStrategy": "Estrategia de Marca",
+    "brandStrategyDesc": "Construcción de narrativas poderosas y marketing centrado en el consumidor.",
+    "innovationEcosystems": "Ecosistemas de Innovación",
+    "innovationEcosystemsDesc": "Plataformas escalables para acelerar el crecimiento multisectorial."
+  },
+  "Insights": {
+    "title": "{insights} Estratégicos",
+    "subtitle": "Pensamiento sistémico y marcos conceptuales para líderes digitales.",
+    "readMore": "Leer Artículo"
+  },
+  "Clients": {
+    "title": "Nuestros {partners}"
+  },
+  "Contact": {
+    "title": "Hablemos de {systems}.",
+    "subtitle": "Diseñamos modelos de crecimiento que funcionan. Complete el formulario para iniciar una conversación estratégica.",
+    "name": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "company": "Empresa / Organización",
+    "context": "Breve Contexto de Crecimiento",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Gracias por contactarnos!",
+    "successDesc": "Nuestro equipo senior revisará su mensaje y se pondrá en contacto pronto.",
+    "backHome": "Volver al Inicio",
+    "error": "Ocurrió un error. Por favor intente de nuevo."
+  },
+  "Navbar": {
+    "services": "Servicios",
+    "insights": "Insights",
+    "clients": "Clientes",
+    "cta": "Hablemos"
+  }
+}

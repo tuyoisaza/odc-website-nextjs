@@ -1,0 +1,46 @@
+{
+  "Index": {
+    "title": "Growth is a {system}, not a Tactic.",
+    "subtitle": "ODC is a strategic consulting firm that designs and activates growth systems. We are architects of the model, integrating strategy, technology, and execution.",
+    "cta": "Our Services"
+  },
+  "Services": {
+    "title": "Consulting {services}",
+    "strategicGrowth": "Strategic Growth",
+    "strategicGrowthDesc": "Definition and activation of models to expand market share.",
+    "digitalTransformation": "Digital Transformation & AI",
+    "digitalTransformationDesc": "Innovation based on cognitive technologies for intelligent operations.",
+    "brandStrategy": "Brand Strategy",
+    "brandStrategyDesc": "Building powerful narratives and consumer-centric marketing.",
+    "innovationEcosystems": "Innovation Ecosystems",
+    "innovationEcosystemsDesc": "Scalable platforms to accelerate multi-sector growth."
+  },
+  "Insights": {
+    "title": "Strategic {insights}",
+    "subtitle": "Systems thinking and conceptual frameworks for digital leaders.",
+    "readMore": "Read Article"
+  },
+  "Clients": {
+    "title": "Our {partners}"
+  },
+  "Contact": {
+    "title": "Let's talk about {systems}.",
+    "subtitle": "We design growth models that work. Complete the form to start a strategic conversation.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "company": "Company / Organization",
+    "context": "Brief Growth Context",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Thanks for contacting us!",
+    "successDesc": "Our senior team will review your message and get in touch soon.",
+    "backHome": "Back to Home",
+    "error": "An error occurred. Please try again."
+  },
+  "Navbar": {
+    "services": "Services",
+    "insights": "Insights",
+    "clients": "Clients",
+    "cta": "Let's Talk"
+  }
+}
