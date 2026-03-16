@@ -1,11 +1,11 @@
 {
   "Index": {
-    "title": "El crecimiento es un {system}, no una táctica.",
+    "title": "El crecimiento es un <system>Sistema</system>, no una táctica.",
     "subtitle": "ODC es una firma de consultoría estratégica que diseña y activa sistemas de crecimiento. Somos arquitectos del modelo, integrando estrategia, tecnología y ejecución.",
     "cta": "Nuestros Servicios"
   },
   "Services": {
-    "title": "{services} de Consultoría",
+    "title": "<services>Servicios</services> de Consultoría",
     "strategicGrowth": "Crecimiento Estratégico",
     "strategicGrowthDesc": "Definición y activación de modelos para expandir participación de mercado.",
     "digitalTransformation": "Transformación Digital e IA",
@@ -16,15 +16,15 @@
     "innovationEcosystemsDesc": "Plataformas escalables para acelerar el crecimiento multisectorial."
   },
   "Insights": {
-    "title": "{insights} Estratégicos",
+    "title": "<insights>Insights</insights> Estratégicos",
     "subtitle": "Pensamiento sistémico y marcos conceptuales para líderes digitales.",
     "readMore": "Leer Artículo"
   },
   "Clients": {
-    "title": "Nuestros {partners}"
+    "title": "Nuestros <partners>Socios</partners>"
   },
   "Contact": {
-    "title": "Hablemos de {systems}.",
+    "title": "Hablemos de <systems>Sistemas</systems>.",
     "subtitle": "Diseñamos modelos de crecimiento que funcionan. Complete el formulario para iniciar una conversación estratégica.",
     "name": "Nombre Completo",
     "email": "Correo Electrónico",

@@ -1,11 +1,11 @@
 {
   "Index": {
-    "title": "Growth is a {system}, not a Tactic.",
+    "title": "Growth is a <system>System</system>, not a Tactic.",
     "subtitle": "ODC is a strategic consulting firm that designs and activates growth systems. We are architects of the model, integrating strategy, technology, and execution.",
     "cta": "Our Services"
   },
   "Services": {
-    "title": "Consulting {services}",
+    "title": "Consulting <services>Services</services>",
     "strategicGrowth": "Strategic Growth",
     "strategicGrowthDesc": "Definition and activation of models to expand market share.",
     "digitalTransformation": "Digital Transformation & AI",
@@ -16,15 +16,15 @@
     "innovationEcosystemsDesc": "Scalable platforms to accelerate multi-sector growth."
   },
   "Insights": {
-    "title": "Strategic {insights}",
+    "title": "Strategic <insights>Insights</insights>",
     "subtitle": "Systems thinking and conceptual frameworks for digital leaders.",
     "readMore": "Read Article"
   },
   "Clients": {
-    "title": "Our {partners}"
+    "title": "Our <partners>Partners</partners>"
   },
   "Contact": {
-    "title": "Let's talk about {systems}.",
+    "title": "Let's talk about <systems>Systems</systems>.",
     "subtitle": "We design growth models that work. Complete the form to start a strategic conversation.",
     "name": "Full Name",
     "email": "Email Address",
