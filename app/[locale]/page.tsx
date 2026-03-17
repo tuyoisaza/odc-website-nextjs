@@ -61,7 +61,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ padding: "6rem 0" }}>
+      <section id="team" style={{ padding: "6rem 0" }}>
         <h2 style={{ fontSize: "3rem", marginBottom: "4rem" }}>
           {useTranslations("Team").rich("title", {
             partners: (chunks) => <span className="gradient-text">{chunks}</span>
