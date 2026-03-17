@@ -49,8 +49,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
 
-USER nextjs
-
+# No USER nextjs - running as root to ensure volume permissions
 EXPOSE 3000
 
 ENV PORT 3000
@@ -58,5 +57,5 @@ ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 
 # Run migrations and start the server
-# We use sh -c to ensure the /data directory exists (in case it's a fresh volume) and migrations run
+# Running as root ensures we can write to the mounted volume in /data
 CMD ["sh", "-c", "npx prisma@6.19.2 migrate deploy && node server.js"]
