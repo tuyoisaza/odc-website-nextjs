@@ -29,13 +29,13 @@ WORKDIR /app
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
-ENV DATABASE_URL="file:/app/data/dev.db"
+ENV DATABASE_URL="file:/data/dev.db"
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Ensure /app and /app/data are owned by nextjs
-RUN mkdir -p /app/data && chown -R nextjs:nodejs /app
+# Create data directory with correct permissions
+RUN mkdir -p /data && chown nextjs:nodejs /data
 
 COPY --from=builder /app/public ./public
 
@@ -57,5 +57,6 @@ ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
-# Run migrations as the nextjs user and start the server
-CMD ["sh", "-c", "mkdir -p /app/data && npx prisma@6.19.2 migrate deploy && node server.js"]
+# Run migrations and start the server
+# We use sh -c to ensure the /data directory exists (in case it's a fresh volume) and migrations run
+CMD ["sh", "-c", "npx prisma@6.19.2 migrate deploy && node server.js"]
