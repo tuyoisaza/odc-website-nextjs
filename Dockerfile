@@ -34,7 +34,8 @@ ENV DATABASE_URL="file:/app/data/dev.db"
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-RUN mkdir -p /app/data && chown nextjs:nodejs /app/data
+# Ensure /app and /app/data are owned by nextjs
+RUN mkdir -p /app/data && chown -R nextjs:nodejs /app
 
 COPY --from=builder /app/public ./public
 
@@ -56,5 +57,5 @@ ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
-# Run migrations and start the server
-CMD npx prisma@6.19.2 migrate deploy && node server.js
+# Run migrations as the nextjs user and start the server
+CMD ["sh", "-c", "mkdir -p /app/data && npx prisma@6.19.2 migrate deploy && node server.js"]
