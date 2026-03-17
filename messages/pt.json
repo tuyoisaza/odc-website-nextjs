@@ -42,5 +42,14 @@
     "insights": "Insights",
     "clients": "Clientes",
     "cta": "Fale Conosco"
+  },
+  "Team": {
+    "title": "Liderança <partners>Estratégica</partners>",
+    "andresName": "Andrés Felipe Jaramillo",
+    "andresTitle": "Co-Founder | ODC",
+    "andresBio": "Engenheiro Industrial, especialista em Marketing Estratégico e AD@IPADE. Mais de 20 anos liderando marketing, crescimento e inovação em consumo, tecnologia e startups na América Latina.",
+    "tuyoName": "Tuyo Isaza",
+    "tuyoTitle": "Estrategista de Inovação Cognitiva",
+    "tuyoBio": "Estrategista de Inovação Cognitiva, mentor e conferencista. Mais de 20 anos impulsionando a transformação cultural, liderança e inovação baseada em IA em organizações."
   }
 }

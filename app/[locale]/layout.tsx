@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { getMessages } from "next-intl/server";
 import { Providers } from "./providers";
+import { Navbar } from "@/components/Navbar";
 import "../globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -29,6 +30,9 @@ export default async function LocaleLayout({
       <body className={plusJakarta.variable}>
         <Providers locale={locale} messages={messages}>
           <div className="systems-bg"></div>
+          <div className="container">
+            <Navbar />
+          </div>
           {children}
         </Providers>
       </body>

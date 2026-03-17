@@ -42,5 +42,14 @@
     "insights": "Insights",
     "clients": "Clients",
     "cta": "Let's Talk"
+  },
+  "Team": {
+    "title": "Strategic <partners>Leadership</partners>",
+    "andresName": "Andrés Felipe Jaramillo",
+    "andresTitle": "Co-Founder | ODC",
+    "andresBio": "Industrial Engineer, specialist in Strategic Marketing and AD@IPADE. More than 20 years leading marketing, growth, and innovation in consumer, technology, and startups in Latin America.",
+    "tuyoName": "Tuyo Isaza",
+    "tuyoTitle": "Cognitive Innovation Strategist",
+    "tuyoBio": "Cognitive Innovation strategist, mentor, and speaker. More than 20 years driving cultural transformation, leadership, and AI-based innovation in organizations."
   }
 }

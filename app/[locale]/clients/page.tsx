@@ -7,9 +7,13 @@ export default function ClientsPage() {
 
   const industries = [
     { name: "Tecnología", clients: ["Boostogether", "Hyland", "RobinFood", "WOPP"] },
-    { name: "Bebidas", clients: ["AB InBev", "Diageo", "Pepsico"] },
+    { name: "Bebidas", clients: ["AB InBev", "Diageo", "Pepsico", "Flores", "Petalli", "Blumelii"] },
     { name: "Transporte", clients: ["Avianca", "Blu Logistics"] },
-    { name: "Salud", clients: ["Pfizer", "Merck", "InSer"] },
+    { name: "Alimentos y Retail", clients: ["Sigma", "Higgs", "Mr Bricolage", "Distribuciones DPJD", "Distribuciones La Integridad"] },
+    { name: "Manufactura y Energía", clients: ["Cerámica Italia", "Schneider Electric", "Motul"] },
+    { name: "Salud y Cuidado Personal", clients: ["InSer (Fertility)", "Pfizer", "Merck C", "Botanique", "Guaapa"] },
+    { name: "Seguros", clients: ["Grupo Bolívar"] },
+    { name: "Sin fines de lucro", clients: ["Fundación Texmodas", "Cámara de Comercio de Cúcuta"] },
   ];
 
   return (

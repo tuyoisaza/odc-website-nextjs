@@ -8,34 +8,10 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export default function Home() {
   const t = useTranslations("Index");
-  const nav = useTranslations("Navbar");
   const locale = useLocale();
 
   return (
     <main className="container">
-      <nav style={{ padding: "2rem 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <div style={{ fontWeight: 800, fontSize: "1.5rem", letterSpacing: "-0.05em" }}>
-          ODC<span className="gradient-text">.</span>
-        </div>
-        <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
-          <Link href={`/${locale}/services`} style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{nav("services")}</Link>
-          <Link href={`/${locale}/insights`} style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{nav("insights")}</Link>
-          <Link href={`/${locale}/clients`} style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{nav("clients")}</Link>
-          <LanguageSwitcher />
-          <ThemeSwitcher />
-          <Link href={`/${locale}/contact`} style={{ 
-            background: "var(--accent)", 
-            color: "white", 
-            padding: "0.5rem 1.25rem", 
-            borderRadius: "0.5rem",
-            fontSize: "0.9rem",
-            fontWeight: 600
-          }}>
-            {nav("cta")}
-          </Link>
-        </div>
-      </nav>
-
       <section style={{ padding: "8rem 0 4rem" }}>
         <div style={{ maxWidth: "800px" }}>
           <h1 style={{ fontSize: "4.5rem", marginBottom: "2rem" }}>
@@ -82,6 +58,30 @@ export default function Home() {
           <Layers style={{ color: "var(--accent)", marginBottom: "1.5rem" }} />
           <h3>{useTranslations("Services")("innovationEcosystems")}</h3>
           <p>{useTranslations("Services")("innovationEcosystemsDesc")}</p>
+        </div>
+      </section>
+
+      <section style={{ padding: "6rem 0" }}>
+        <h2 style={{ fontSize: "3rem", marginBottom: "4rem" }}>
+          {useTranslations("Team").rich("title", {
+            partners: (chunks) => <span className="gradient-text">{chunks}</span>
+          })}
+        </h2>
+        <div className="editorial-grid">
+          <div className="card" style={{ gridColumn: "span 6" }}>
+            <h3 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>{useTranslations("Team")("andresName")}</h3>
+            <p style={{ fontWeight: 600, color: "var(--accent)", marginBottom: "1.5rem", fontSize: "0.9rem", textTransform: "uppercase" }}>
+              {useTranslations("Team")("andresTitle")}
+            </p>
+            <p>{useTranslations("Team")("andresBio")}</p>
+          </div>
+          <div className="card" style={{ gridColumn: "span 6" }}>
+            <h3 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>{useTranslations("Team")("tuyoName")}</h3>
+            <p style={{ fontWeight: 600, color: "var(--accent-magenta)", marginBottom: "1.5rem", fontSize: "0.9rem", textTransform: "uppercase" }}>
+              {useTranslations("Team")("tuyoTitle")}
+            </p>
+            <p>{useTranslations("Team")("tuyoBio")}</p>
+          </div>
         </div>
       </section>
     </main>
