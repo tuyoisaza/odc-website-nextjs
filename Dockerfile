@@ -1,4 +1,5 @@
 FROM node:20-alpine AS base
+RUN npm install -g npm@11.11.1
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -49,9 +50,9 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
 
 # No USER nextjs - running as root to ensure volume permissions
-EXPOSE 3000
+EXPOSE 8080
 
-ENV PORT 3000
+ENV PORT 8080
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
