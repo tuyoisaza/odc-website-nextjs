@@ -1,5 +1,4 @@
 FROM node:20-alpine AS base
-RUN npm install -g npm@11.11.1
 
 # Install dependencies only when needed
 FROM base AS deps
