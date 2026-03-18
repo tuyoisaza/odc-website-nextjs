@@ -1,15 +1,14 @@
-"use client";
+import { getTranslations } from "next-intl/server";
+import { prisma } from "@/lib/prisma";
+import Link from "next/link";
 
-import { useTranslations } from "next-intl";
-
-export default function InsightsPage() {
-  const t = useTranslations("Insights");
-
-  const articles = [
-    { title: "El Crecimiento Sostenible como Sistema", date: "Marzo 2026", excerpt: "Por qué las tácticas aisladas fallan en el largo plazo..." },
-    { title: "IA Cognitiva en la Estrategia", date: "Febrero 2026", excerpt: "Integrando modelos de lenguaje en el core del negocio..." },
-    { title: "Arquitectura de Marcas Modernas", date: "Enero 2026", excerpt: "Narrativas que resuenan en ecosistemas fragmentados..." },
-  ];
+export default async function InsightsPage({ params }: { params: { locale: string } }) {
+  const t = await getTranslations("Insights");
+  
+  const articles = await prisma.article.findMany({
+    where: { published: true },
+    orderBy: { createdAt: "desc" }
+  });
 
   return (
     <main className="container" style={{ padding: "6rem 0" }}>
@@ -21,16 +20,23 @@ export default function InsightsPage() {
       <p style={{ marginBottom: "4rem", maxWidth: "600px" }}>{t("subtitle")}</p>
       
       <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
-        {articles.map((a, i) => (
-          <article key={i} style={{ paddingBottom: "4rem", borderBottom: "1px solid var(--border)" }}>
-            <span style={{ color: "var(--accent)", fontSize: "0.8rem", fontWeight: 700 }}>{a.date}</span>
+        {articles.map((a) => (
+          <article key={a.id} style={{ paddingBottom: "4rem", borderBottom: "1px solid var(--border)" }}>
+            <span style={{ color: "var(--accent)", fontSize: "0.8rem", fontWeight: 700 }}>
+              {new Date(a.createdAt).toLocaleDateString(params.locale === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'long' })}
+            </span>
             <h2 style={{ fontSize: "2.5rem", margin: "1rem 0" }}>{a.title}</h2>
-            <p style={{ maxWidth: "700px" }}>{a.excerpt}</p>
-            <button style={{ background: "transparent", color: "var(--foreground)", padding: "0.5rem 1rem", border: "1px solid var(--border)", borderRadius: "0.5rem", cursor: "pointer" }}>
-              {t("readMore")}
-            </button>
+            <p style={{ maxWidth: "700px", marginBottom: "1rem" }}>{a.excerpt}</p>
+            <Link href={`/${params.locale}/insights/${a.slug}`}>
+              <button style={{ background: "transparent", color: "var(--foreground)", padding: "0.5rem 1rem", border: "1px solid var(--border)", borderRadius: "0.5rem", cursor: "pointer" }}>
+                {t("readMore")}
+              </button>
+            </Link>
           </article>
         ))}
+        {articles.length === 0 && (
+          <p style={{ color: "var(--muted)" }}>No hay artículos disponibles por el momento.</p>
+        )}
       </div>
     </main>
   );

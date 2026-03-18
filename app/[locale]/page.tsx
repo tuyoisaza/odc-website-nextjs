@@ -69,6 +69,7 @@ export default function Home() {
         </h2>
         <div className="editorial-grid">
           <div className="card" style={{ gridColumn: "span 6" }}>
+            <img src="/andres_headshot.png" alt="Andrés Felipe Jaramillo" style={{ width: "100%", height: "400px", objectFit: "cover", borderRadius: "0.5rem", marginBottom: "1.5rem" }} loading="lazy" />
             <h3 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>{useTranslations("Team")("andresName")}</h3>
             <p style={{ fontWeight: 600, color: "var(--accent)", marginBottom: "1.5rem", fontSize: "0.9rem", textTransform: "uppercase" }}>
               {useTranslations("Team")("andresTitle")}
@@ -76,6 +77,7 @@ export default function Home() {
             <p>{useTranslations("Team")("andresBio")}</p>
           </div>
           <div className="card" style={{ gridColumn: "span 6" }}>
+            <img src="/tuyo_headshot.png" alt="Tuyo Isaza" style={{ width: "100%", height: "400px", objectFit: "cover", borderRadius: "0.5rem", marginBottom: "1.5rem" }} loading="lazy" />
             <h3 style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>{useTranslations("Team")("tuyoName")}</h3>
             <p style={{ fontWeight: 600, color: "var(--accent-magenta)", marginBottom: "1.5rem", fontSize: "0.9rem", textTransform: "uppercase" }}>
               {useTranslations("Team")("tuyoTitle")}

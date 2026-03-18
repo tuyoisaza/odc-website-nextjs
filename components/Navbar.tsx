@@ -18,6 +18,7 @@ export function Navbar() {
         <Link href={`/${locale}/services`} style={{ color: "var(--muted)", fontSize: "0.9rem", textDecoration: "none" }}>{nav("services")}</Link>
         <Link href={`/${locale}/insights`} style={{ color: "var(--muted)", fontSize: "0.9rem", textDecoration: "none" }}>{nav("insights")}</Link>
         <Link href={`/${locale}/clients`} style={{ color: "var(--muted)", fontSize: "0.9rem", textDecoration: "none" }}>{nav("clients")}</Link>
+        <Link href={`/${locale}/juntas-directivas`} style={{ color: "var(--muted)", fontSize: "0.9rem", textDecoration: "none" }}>{nav("juntas")}</Link>
         <Link href={`/${locale}#team`} style={{ color: "var(--muted)", fontSize: "0.9rem", textDecoration: "none" }}>Team</Link>
         <LanguageSwitcher />
         <ThemeSwitcher />

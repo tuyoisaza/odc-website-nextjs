@@ -21,7 +21,7 @@
     "readMore": "Leer Artículo"
   },
   "Clients": {
-    "title": "Nuestros <partners>Socios</partners>"
+    "title": "Marcas que han confiado en nuestro <partners>Talento</partners>"
   },
   "Contact": {
     "title": "Hablemos de <systems>Sistemas</systems>.",
@@ -41,6 +41,7 @@
     "services": "Servicios",
     "insights": "Insights",
     "clients": "Clientes",
+    "juntas": "Juntas Directivas",
     "cta": "Hablemos"
   },
   "Team": {
@@ -51,5 +52,15 @@
     "tuyoName": "Tuyo Isaza",
     "tuyoTitle": "Estratega de Innovación Cognitiva",
     "tuyoBio": "Estratega de Innovación Cognitiva, mentor y conferencista. Más de 20 años impulsando transformación cultural, liderazgo e innovación basada en IA en organizaciones."
+  },
+  "Juntas": {
+    "title": "Asesoría para <highlight>Juntas Directivas</highlight>",
+    "subtitle": "Acompañamiento estratégico avanzado para juntas y comités de dirección.",
+    "value1Title": "Gobernanza Digital",
+    "value1Desc": "Alineación de tecnología y estrategia para decisiones a nivel de junta.",
+    "value2Title": "Perspectiva Cognitiva",
+    "value2Desc": "Adopción de IA y modelos avanzados desde el liderazgo superior.",
+    "value3Title": "Crecimiento Sostenible",
+    "value3Desc": "Estructuración de modelos de resiliencia y expansión a largo plazo."
   }
 }

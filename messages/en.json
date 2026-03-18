@@ -41,6 +41,7 @@
     "services": "Services",
     "insights": "Insights",
     "clients": "Clients",
+    "juntas": "Boards of Directors",
     "cta": "Let's Talk"
   },
   "Team": {
@@ -51,5 +52,15 @@
     "tuyoName": "Tuyo Isaza",
     "tuyoTitle": "Cognitive Innovation Strategist",
     "tuyoBio": "Cognitive Innovation strategist, mentor, and speaker. More than 20 years driving cultural transformation, leadership, and AI-based innovation in organizations."
+  },
+  "Juntas": {
+    "title": "Advisory for <highlight>Boards of Directors</highlight>",
+    "subtitle": "Advanced strategic accompaniment for boards and executive committees.",
+    "value1Title": "Digital Governance",
+    "value1Desc": "Alignment of technology and strategy for board-level decisions.",
+    "value2Title": "Cognitive Perspective",
+    "value2Desc": "Adoption of AI and advanced models from top leadership.",
+    "value3Title": "Sustainable Growth",
+    "value3Desc": "Structuring long-term resilience and expansion models."
   }
 }
