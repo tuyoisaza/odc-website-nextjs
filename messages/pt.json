@@ -6,14 +6,17 @@
   },
   "Services": {
     "title": "<services>Serviços</services> de Consultoria",
-    "strategicGrowth": "Crescimento Estratégico",
-    "strategicGrowthDesc": "Definição e ativação de modelos para expandir a participação de mercado.",
-    "digitalTransformation": "Transformação Digital e IA",
-    "digitalTransformationDesc": "Inovação baseada em tecnologias cognitivas para operações inteligentes.",
-    "brandStrategy": "Estratégia de Marca",
-    "brandStrategyDesc": "Construindo narrativas poderosas e marketing centrado no consumidor.",
-    "innovationEcosystems": "Ecossistemas de Inovação",
-    "innovationEcosystemsDesc": "Plataformas escaláveis para acelerar o crescimento multisetorial."
+    "subtitle": "Soluções sob medida projetadas para desbloquear crescimento, transformação e novas oportunidades de negócio.",
+    "strategicGrowth": "Crescimento Estratégico e Desempenho",
+    "strategicGrowthDesc": "Ajudamos empresas e líderes a definir e ativar estratégias de crescimento, combinando visão estratégica com execução para expandir a participação de mercado e fortalecer a competitividade de longo prazo.",
+    "digitalTransformation": "Transformação Cultural, Digital e IA",
+    "digitalTransformationDesc": "Impulsionamos processos de transformação organizacional, gestão de mudanças e inovação por meio de tecnologias digitais e cognitivas para habilitar organizações adaptativas e operações inteligentes.",
+    "brandStrategy": "Estratégia de Marca e Marketing",
+    "brandStrategyDesc": "Construímos marcas e estratégias de marketing poderosas por meio de marketing integrado, estratégia baseada em dados e narrativas centradas no consumidor para uma liderança de mercado duradoura e crescimento.",
+    "innovationEcosystems": "Ecossistema de Inovação e Crescimento",
+    "innovationEcosystemsDesc": "Projetamos e implementamos plataformas impulsionadas por inovação e colaboração para construir ecossistemas digitais escaláveis, acelerar o crescimento e desbloquear novas oportunidades de mercado.",
+    "storytelling": "Storytelling e Comunicação Estratégica",
+    "storytellingDesc": "Ajudamos líderes e equipes a construir narrativas claras e persuasivas, pitches e apresentações que inspiram, alinham e mobilizam audiências para a ação."
   },
   "Insights": {
     "title": "<insights>Insights</insights> Estratégicos",
@@ -41,6 +44,7 @@
     "services": "Serviços",
     "insights": "Insights",
     "clients": "Clientes",
+    "juntas": "Conselhos de Administração",
     "cta": "Fale Conosco"
   },
   "Team": {
@@ -51,5 +55,15 @@
     "tuyoName": "Tuyo Isaza",
     "tuyoTitle": "Estrategista de Inovação Cognitiva",
     "tuyoBio": "Estrategista de Inovação Cognitiva, mentor e conferencista. Mais de 20 anos impulsionando a transformação cultural, liderança e inovação baseada em IA em organizações."
+  },
+  "Juntas": {
+    "title": "Assessoria para <highlight>Conselhos de Administração</highlight>",
+    "subtitle": "Acompanhamento estratégico avançado para conselhos e comitês de direção.",
+    "value1Title": "Governança Digital",
+    "value1Desc": "Alinhamento de tecnologia e estratégia para decisões ao nível do conselho.",
+    "value2Title": "Perspectiva Cognitiva",
+    "value2Desc": "Adoção de IA e modelos avançados a partir da liderança superior.",
+    "value3Title": "Crescimento Sustentável",
+    "value3Desc": "Estruturação de modelos de resiliência e expansão de longo prazo."
   }
 }

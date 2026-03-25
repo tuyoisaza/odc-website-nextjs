@@ -6,14 +6,17 @@
   },
   "Services": {
     "title": "Consulting <services>Services</services>",
-    "strategicGrowth": "Strategic Growth",
-    "strategicGrowthDesc": "Definition and activation of models to expand market share.",
-    "digitalTransformation": "Digital Transformation & AI",
-    "digitalTransformationDesc": "Innovation based on cognitive technologies for intelligent operations.",
-    "brandStrategy": "Brand Strategy",
-    "brandStrategyDesc": "Building powerful narratives and consumer-centric marketing.",
-    "innovationEcosystems": "Innovation Ecosystems",
-    "innovationEcosystemsDesc": "Scalable platforms to accelerate multi-sector growth."
+    "subtitle": "Tailored solutions designed to unlock growth, transformation, and new business opportunities.",
+    "strategicGrowth": "Strategic Growth & Performance",
+    "strategicGrowthDesc": "We help companies and leaders define and activate growth strategies, combining strategic vision with execution to expand market share and strengthen long-term competitiveness.",
+    "digitalTransformation": "Cultural, Digital & AI Transformation",
+    "digitalTransformationDesc": "We drive organizational transformation, change management, and innovation through digital and cognitive technologies to enable adaptive organizations and intelligent operations.",
+    "brandStrategy": "Brand Strategy & Marketing",
+    "brandStrategyDesc": "We build powerful brands and marketing strategies through integrated marketing, data-driven strategy, and consumer-centric narratives for lasting market leadership and growth.",
+    "innovationEcosystems": "Innovation & Growth Ecosystem",
+    "innovationEcosystemsDesc": "We design and implement platforms powered by innovation and collaboration to build scalable digital ecosystems, accelerate growth, and unlock new market opportunities.",
+    "storytelling": "Storytelling & Strategic Communication",
+    "storytellingDesc": "We help leaders and teams build clear and persuasive narratives, pitches, and presentations that inspire, align, and mobilize audiences toward action."
   },
   "Insights": {
     "title": "Strategic <insights>Insights</insights>",

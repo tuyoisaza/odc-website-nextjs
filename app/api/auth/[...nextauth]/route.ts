@@ -1,11 +1,11 @@
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/lib/prisma";
 import EmailProvider from "next-auth/providers/email";
 import GoogleProvider from "next-auth/providers/google";
 
-const handler = NextAuth({
-  adapter: PrismaAdapter(prisma),
+export const authOptions: NextAuthOptions = {
+  adapter: PrismaAdapter(prisma) as any,
   providers: [
     EmailProvider({
       server: process.env.EMAIL_SERVER,
@@ -21,6 +21,8 @@ const handler = NextAuth({
       if (session.user) {
         // @ts-ignore
         session.user.id = user.id;
+        // @ts-ignore
+        session.user.role = (user as any).role || 'member';
       }
       return session;
     },
@@ -28,6 +30,8 @@ const handler = NextAuth({
   pages: {
     signIn: "/admin/login",
   },
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

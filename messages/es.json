@@ -6,14 +6,17 @@
   },
   "Services": {
     "title": "<services>Servicios</services> de Consultoría",
-    "strategicGrowth": "Crecimiento Estratégico",
-    "strategicGrowthDesc": "Definición y activación de modelos para expandir participación de mercado.",
-    "digitalTransformation": "Transformación Digital e IA",
-    "digitalTransformationDesc": "Innovación basada en tecnologías cognitivas para operaciones inteligentes.",
-    "brandStrategy": "Estrategia de Marca",
-    "brandStrategyDesc": "Construcción de narrativas poderosas y marketing centrado en el consumidor.",
-    "innovationEcosystems": "Ecosistemas de Innovación",
-    "innovationEcosystemsDesc": "Plataformas escalables para acelerar el crecimiento multisectorial."
+    "subtitle": "Soluciones a la medida diseñadas para desbloquear crecimiento, transformación y nuevas oportunidades de negocio.",
+    "strategicGrowth": "Crecimiento Estratégico y Desempeño",
+    "strategicGrowthDesc": "Ayudamos a empresas y líderes a definir y activar estrategias de crecimiento, combinando visión estratégica con ejecución para expandir participación de mercado y fortalecer la competitividad a largo plazo.",
+    "digitalTransformation": "Transformación Cultural, Digital e IA",
+    "digitalTransformationDesc": "Impulsamos procesos de transformación organizacional, gestión del cambio e innovación a través de tecnologías digitales y cognitivas para habilitar organizaciones adaptativas y operaciones inteligentes.",
+    "brandStrategy": "Estrategia de Marca y Marketing",
+    "brandStrategyDesc": "Construimos marcas y estrategias de marketing poderosas a través de marketing integrado, estrategia basada en datos y narrativas centradas en el consumidor para un liderazgo de mercado duradero y crecimiento.",
+    "innovationEcosystems": "Ecosistema de Innovación y Crecimiento",
+    "innovationEcosystemsDesc": "Diseñamos e implementamos plataformas impulsadas por innovación y colaboración para construir ecosistemas digitales escalables, acelerar el crecimiento y desbloquear nuevas oportunidades de mercado.",
+    "storytelling": "Storytelling y Comunicación Estratégica",
+    "storytellingDesc": "Ayudamos a líderes y equipos a construir narrativas claras y persuasivas, pitches y presentaciones que inspiran, alinean y movilizan audiencias hacia la acción."
   },
   "Insights": {
     "title": "<insights>Insights</insights> Estratégicos",
