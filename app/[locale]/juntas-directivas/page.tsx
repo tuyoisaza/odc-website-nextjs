@@ -57,13 +57,7 @@ const content = {
     s3Results1: "Mayor capacidad de supervisión estratégica.",
     s3Results2: "Mejor evaluación de inversiones tecnológicas.",
     s3Results3: "Mayor claridad sobre riesgos emergentes.",
-    pricingTitle: "Pricing & Bundles",
-    extendedBriefing: "Extended Briefing:",
-    extendedBlueprint: "Extended Blueprint:",
-    perMonth: "/ mes",
-    enhancedAdvisor: "Enhanced Advisor:",
-    bundlesTitle: "Program Bundles",
-    months12: "(12 meses)",
+
     conclusionTitle: "El Resultado Final",
     conclusionText: "El objetivo del programa AI Governance for Boards es proporcionar a la Junta Directiva los marcos, herramientas y acompañamiento necesarios para supervisar uno de los cambios tecnológicos más importantes de las próximas décadas.",
     conclusionStrong1: "La Inteligencia Artificial no es solo un tema tecnológico.",
@@ -123,13 +117,7 @@ const content = {
     s3Results1: "Greater capacity for strategic oversight.",
     s3Results2: "Better evaluation of technological investments.",
     s3Results3: "Greater clarity on emerging risks.",
-    pricingTitle: "Pricing & Bundles",
-    extendedBriefing: "Extended Briefing:",
-    extendedBlueprint: "Extended Blueprint:",
-    perMonth: "/ month",
-    enhancedAdvisor: "Enhanced Advisor:",
-    bundlesTitle: "Program Bundles",
-    months12: "(12 months)",
+
     conclusionTitle: "The Final Result",
     conclusionText: "The goal of the AI Governance for Boards program is to provide the Board of Directors with the necessary frameworks, tools, and support to oversee one of the most important technological shifts of the coming decades.",
     conclusionStrong1: "Artificial Intelligence is not just a technological issue.",
@@ -327,50 +315,7 @@ export default function JuntasDirectivasPage() {
         </div>
       </section>
 
-      {/* Pricing & Bundles */}
-      <section style={{ marginBottom: "6rem" }}>
-        <h2 style={{ fontSize: "3rem", marginBottom: "3rem", textAlign: "center" }}>{c.pricingTitle}</h2>
-        
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", marginBottom: "4rem" }}>
-          <div style={{ border: "1px solid var(--border)", padding: "2rem", borderRadius: "0.5rem", textAlign: "center" }}>
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>AI Board Briefing</h3>
-            <p style={{ fontSize: "2rem", fontWeight: "bold", color: "var(--accent)" }}>USD $20,000</p>
-            <p style={{ color: "var(--muted)", margin: "1rem 0" }}>{c.extendedBriefing} USD $25,000</p>
-          </div>
-          <div style={{ border: "1px solid var(--border)", padding: "2rem", borderRadius: "0.5rem", textAlign: "center" }}>
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>AI Governance Blueprint</h3>
-            <p style={{ fontSize: "2rem", fontWeight: "bold", color: "var(--accent-magenta)" }}>USD $45,000</p>
-            <p style={{ color: "var(--muted)", margin: "1rem 0" }}>{c.extendedBlueprint} USD $60,000</p>
-          </div>
-          <div style={{ border: "1px solid var(--border)", padding: "2rem", borderRadius: "0.5rem", textAlign: "center" }}>
-            <h3 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>AI Board Advisor</h3>
-            <p style={{ fontSize: "2rem", fontWeight: "bold", color: "var(--foreground)" }}>USD $8,000 <span style={{fontSize: "1rem", fontWeight: "normal"}}>{c.perMonth}</span></p>
-            <p style={{ color: "var(--muted)", margin: "1rem 0" }}>{c.enhancedAdvisor} USD $12,000 {c.perMonth}</p>
-          </div>
-        </div>
 
-        <h3 style={{ fontSize: "2rem", marginBottom: "2rem", textAlign: "center" }}>{c.bundlesTitle}</h3>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", justifyContent: "center" }}>
-          <div className="card" style={{ flex: "1 1 400px", background: "url('/noise.png')", backgroundColor: "var(--card)", padding: "3rem", borderRadius: "1rem", border: "2px solid var(--border)" }}>
-            <h4 style={{ fontSize: "1.8rem", marginBottom: "1rem" }}>Governance Launch Package</h4>
-            <ul style={{ paddingLeft: "1.2rem", marginBottom: "2rem", fontSize: "1.1rem" }}>
-              <li>AI Board Briefing</li>
-              <li>AI Governance Blueprint</li>
-            </ul>
-            <p style={{ fontSize: "2.5rem", fontWeight: "bold", color: "var(--accent)" }}>USD $55,000</p>
-          </div>
-          
-          <div style={{ flex: "1 1 400px", background: "linear-gradient(135deg, var(--accent) 0%, var(--accent-magenta) 100%)", color: "white", padding: "3rem", borderRadius: "1rem", boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}>
-            <h4 style={{ fontSize: "1.8rem", marginBottom: "1rem" }}>Full Governance Program</h4>
-            <ul style={{ paddingLeft: "1.2rem", marginBottom: "2rem", fontSize: "1.1rem" }}>
-              <li>AI Board Briefing</li>
-              <li>AI Governance Blueprint</li>
-              <li>AI Board Advisor {c.months12}</li>
-            </ul>
-            <p style={{ fontSize: "2.5rem", fontWeight: "bold" }}>USD $140,000</p>
-          </div>
-        </div>
-      </section>
 
       {/* Resultado Final */}
       <section style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto", padding: "4rem 0", borderTop: "1px solid var(--border)" }}>
