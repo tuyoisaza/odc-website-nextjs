@@ -6,7 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 interface ProvidersProps {
   children: React.ReactNode;
   locale: string;
-  messages: any;
+  messages: Record<string, unknown>;
 }
 
 export function Providers({ children, locale, messages }: ProvidersProps) {

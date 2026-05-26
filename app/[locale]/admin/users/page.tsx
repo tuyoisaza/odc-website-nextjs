@@ -2,13 +2,16 @@
 
 import { useState, useEffect } from "react";
 
-export default function AdminUsersPage() {
-  const [users, setUsers] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+interface UserItem {
+  id: string;
+  name: string | null;
+  email: string | null;
+  role: string;
+}
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+export default function AdminUsersPage() {
+  const [users, setUsers] = useState<UserItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchUsers = async () => {
     setIsLoading(true);
@@ -26,6 +29,9 @@ export default function AdminUsersPage() {
       setIsLoading(false);
     }
   };
+
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => { fetchUsers(); }, []);
 
   const handleRoleChange = async (userId: string, newRole: string) => {
     try {

@@ -4,7 +4,7 @@ import { deleteArticle } from "@/lib/actions";
 import type { Article } from "@prisma/client";
 
 export default async function AdminInsightsPage() {
-  const articles = await prisma.article.findMany({
+  const articles: Article[] = await prisma.article.findMany({
     orderBy: { createdAt: "desc" },
   });
 

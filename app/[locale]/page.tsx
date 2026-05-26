@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { TeamSection } from "@/components/TeamSection";
 
 export default function Home() {

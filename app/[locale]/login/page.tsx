@@ -2,7 +2,6 @@
 
 import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
-import { LogIn } from "lucide-react";
 
 export default function LoginPage() {
   const searchParams = useSearchParams();

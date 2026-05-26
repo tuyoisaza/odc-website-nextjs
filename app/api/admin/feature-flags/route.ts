@@ -21,7 +21,7 @@ export async function POST(req: Request) {
 
     await createAuditLog("CREATE_FEATURE_FLAG", { name, isEnabled });
     return NextResponse.json(flag);
-  } catch (e) {
+  } catch {
     return NextResponse.json({ error: "Failed to create feature flag" }, { status: 500 });
   }
 }

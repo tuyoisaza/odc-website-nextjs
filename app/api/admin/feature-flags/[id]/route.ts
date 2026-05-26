@@ -9,7 +9,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     const { id } = await params;
     const body = await req.json();
     
-    const data: any = {};
+    const data: Record<string, unknown> = {};
     if (body.isEnabled !== undefined) data.isEnabled = body.isEnabled;
     if (body.global !== undefined) data.global = body.global;
     if (body.name !== undefined) data.name = body.name;
@@ -21,7 +21,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
     await createAuditLog("UPDATE_FEATURE_FLAG", { id, updates: data });
     return NextResponse.json(flag);
-  } catch (e) {
+  } catch {
     return NextResponse.json({ error: "Failed to update feature flag" }, { status: 500 });
   }
 }

@@ -20,7 +20,7 @@ export default async function AdminLayout({
     const pkgPath = path.resolve(process.cwd(), "package.json");
     const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
     version = pkg.version;
-  } catch (e) {}
+  } catch {}
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>

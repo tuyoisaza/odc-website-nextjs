@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 
-export async function logDebug(context: string, message: string, payload?: any) {
+export async function logDebug(context: string, message: string, payload?: unknown) {
   try {
     const setting = await prisma.systemSetting.findUnique({ where: { key: "DEBUG_MODE" } });
     

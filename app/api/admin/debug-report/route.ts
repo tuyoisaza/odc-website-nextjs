@@ -11,14 +11,14 @@ export async function GET() {
     let gitSha = "unknown";
     try {
       gitSha = execSync("git rev-parse --short HEAD").toString().trim();
-    } catch(e) {}
+    } catch {}
     
     let version = "unknown";
     try {
       const pkgPath = path.resolve(process.cwd(), "package.json");
       const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
       version = pkg.version;
-    } catch (e) {}
+    } catch {}
     
     return NextResponse.json({
       projectName: "ODC Web",
@@ -27,7 +27,7 @@ export async function GET() {
       buildTimestamp: new Date().toISOString(),
       nodeEnv: process.env.NODE_ENV,
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to generate report" }, { status: 500 });
   }
 }

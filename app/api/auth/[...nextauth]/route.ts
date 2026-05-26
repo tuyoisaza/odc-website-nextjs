@@ -5,7 +5,7 @@ import EmailProvider from "next-auth/providers/email";
 import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma) as any,
+  adapter: PrismaAdapter(prisma),
   providers: [
     EmailProvider({
       server: process.env.EMAIL_SERVER,
@@ -19,10 +19,10 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async session({ session, user }) {
       if (session.user) {
-        // @ts-ignore
+        // @ts-expect-error - user.id added to session type
         session.user.id = user.id;
-        // @ts-ignore
-        session.user.role = (user as any).role || 'member';
+        // @ts-expect-error - user.role added to session type
+        session.user.role = user.role || 'member';
       }
       return session;
     },

@@ -2,13 +2,13 @@ import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-export async function createAuditLog(action: string, details?: any) {
+export async function createAuditLog(action: string, details?: unknown) {
   try {
     const session = await getServerSession(authOptions);
     
     await prisma.auditLog.create({
       data: {
-        // @ts-ignore
+        // @ts-expect-error - user.id added to session by callbacks
         userId: session?.user?.id || "system",
         userEmail: session?.user?.email || "system",
         action,

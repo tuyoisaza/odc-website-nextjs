@@ -1,26 +1,38 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+
+interface ClientItem {
+  id: string;
+  name: string;
+  logo: string | null;
+  url: string | null;
+  categoryId: string | null;
+  order: number;
+  createdAt: string;
+  updatedAt: string;
+  category?: { id: string; name: string; order: number } | null;
+}
+
+interface CategoryItem {
+  id: string;
+  name: string;
+  order: number;
+  createdAt: string;
+  updatedAt: string;
+}
 
 export default function AdminClientsPage() {
   const [activeTab, setActiveTab] = useState<"clients" | "categories">("clients");
-  const [categories, setCategories] = useState<any[]>([]);
-  const [clients, setClients] = useState<any[]>([]);
+  const [categories, setCategories] = useState<CategoryItem[]>([]);
+  const [clients, setClients] = useState<ClientItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Form states
-  const [editingCategory, setEditingCategory] = useState<any>(null);
-  const [editingClient, setEditingClient] = useState<any>(null);
+  const [editingCategory, setEditingCategory] = useState<CategoryItem | null>(null);
+  const [editingClient, setEditingClient] = useState<ClientItem | null>(null);
 
   const [categoryForm, setCategoryForm] = useState({ name: "", order: 0 });
   const [clientForm, setClientForm] = useState({ name: "", url: "", logo: "", categoryId: "", order: 0 });
-
-  const router = useRouter();
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const fetchData = async () => {
     setIsLoading(true);
@@ -40,6 +52,9 @@ export default function AdminClientsPage() {
       setIsLoading(false);
     }
   };
+
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => { fetchData(); }, []);
 
   const handleSaveCategory = async (e: React.FormEvent) => {
     e.preventDefault();

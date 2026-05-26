@@ -30,7 +30,8 @@ export async function GET(req: Request) {
       success: true, 
       message: `El usuario ${email} ahora tiene el rol de super_admin! Ya puedes entrar a /admin/insights y administrar el sitio.` 
     });
-  } catch (error: any) {
-    return NextResponse.json({ error: "Failed to elevate user", details: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    return NextResponse.json({ error: "Failed to elevate user", details: message }, { status: 500 });
   }
 }

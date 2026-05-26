@@ -7,7 +7,7 @@ export async function GET() {
   await requireRole(["super_admin"]);
   const settings = await prisma.systemSetting.findMany();
   // Transform to dict
-  const dict = settings.reduce((acc, curr) => ({ ...acc, [curr.key]: curr.value }), {});
+  const dict = settings.reduce((acc: Record<string, string>, curr: { key: string; value: string }) => ({ ...acc, [curr.key]: curr.value }), {} as Record<string, string>);
   return NextResponse.json(dict);
 }
 
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
     await createAuditLog("UPDATE_SYSTEM_SETTING", { key, value });
     
     return NextResponse.json(setting);
-  } catch (e) {
+  } catch {
     return NextResponse.json({ error: "Failed to update setting" }, { status: 500 });
   }
 }

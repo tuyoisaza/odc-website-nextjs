@@ -2,19 +2,23 @@
 
 import { useState, useEffect } from "react";
 
+interface LogItem {
+  id: string;
+  userId: string | null;
+  userEmail: string | null;
+  action: string;
+  details: string | null;
+  timestamp: string;
+}
+
 export default function AdminSystemPage() {
   const [activeTab, setActiveTab] = useState<"settings" | "flags" | "audit">("settings");
   
-  const [settings, setSettings] = useState<any>({});
-  const [flags, setFlags] = useState<any[]>([]);
-  const [logs, setLogs] = useState<any[]>([]);
-  const [report, setReport] = useState<any>(null);
+  const [settings, setSettings] = useState<Record<string, string>>({});
+  const [flags, setFlags] = useState<{ id: string; name: string; isEnabled: boolean; global: boolean }[]>([]);
+  const [logs, setLogs] = useState<LogItem[]>([]);
 
   const [flagForm, setFlagForm] = useState({ name: "", isEnabled: false, global: true });
-
-  useEffect(() => {
-    fetchData();
-  }, [activeTab]);
 
   const fetchData = async () => {
     try {
@@ -33,6 +37,9 @@ export default function AdminSystemPage() {
     }
   };
 
+  // eslint-disable-next-line react-hooks/set-state-in-effect, react-hooks/exhaustive-deps
+  useEffect(() => { fetchData(); }, [activeTab]);
+
   const handleToggleDebug = async () => {
     const newVal = settings.DEBUG_MODE === "true" ? "false" : "true";
     await fetch("/api/admin/system-settings", {
@@ -45,8 +52,7 @@ export default function AdminSystemPage() {
   const fetchDebugReport = async () => {
     const res = await fetch("/api/admin/debug-report");
     const data = await res.json();
-    setReport(data);
-    navigator.clipboard.writeText(JSON.stringify(data, null, 2));
+    await navigator.clipboard.writeText(JSON.stringify(data, null, 2));
     alert("Copiado al portapapeles:\n" + JSON.stringify(data, null, 2));
   };
 
@@ -81,7 +87,7 @@ export default function AdminSystemPage() {
         {["settings", "flags", "audit"].map(tab => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab as any)}
+            onClick={() => setActiveTab(tab as "settings" | "flags" | "audit")}
             style={{
               padding: "0.5rem 1rem",
               background: activeTab === tab ? "var(--foreground)" : "transparent",

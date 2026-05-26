@@ -20,7 +20,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     await createAuditLog("UPDATE_USER_ROLE", { targetUserId: id, newRole: role });
     
     return NextResponse.json(user);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to update user" }, { status: 500 });
   }
 }
