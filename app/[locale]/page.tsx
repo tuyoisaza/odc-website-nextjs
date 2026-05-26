@@ -30,6 +30,10 @@ export default function Home() {
         </div>
       </section>
 
+      <section style={{ padding: "0 0 1rem" }}>
+        <h2 style={{ fontSize: "3rem", margin: 0 }}>Our System</h2>
+      </section>
+
       <section className="editorial-grid" style={{ padding: "6rem 0" }}>
         {serviceList.map((s, i) => (
           <div key={i} className="card" style={{ gridColumn: "span 6" }}>
