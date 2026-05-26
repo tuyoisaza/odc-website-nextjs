@@ -57,4 +57,4 @@ ENV HOSTNAME "0.0.0.0"
 
 # Run migrations and start the server
 # Running as root ensures we can write to the mounted volume in /data
-CMD ["sh", "-c", "npx prisma@6.19.2 migrate deploy && node server.js"]
+CMD ["sh", "-c", "npx prisma@6.19.2 db push --accept-data-loss && node server.js"]
