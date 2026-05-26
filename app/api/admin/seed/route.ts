@@ -36,13 +36,10 @@ export async function POST(req: Request) {
       create: { name: "Consumo Masivo y Retail", order: 2 }
     });
 
-    // Create 3 example tech clients
     const clientsData = [
-      { name: "Boostogether", url: "https://boostogether.com", categoryId: techCategory.id, logo: "boostogether.com", order: 1 },
-      { name: "Hyland", url: "https://hyland.com", categoryId: techCategory.id, logo: "hyland.com", order: 2 },
-      { name: "RobinFood", url: "https://robinfood.com", categoryId: techCategory.id, logo: "robinfood.com", order: 3 },
-      { name: "AB InBev", url: "https://ab-inbev.com", categoryId: fmcgCategory.id, logo: "ab-inbev.com", order: 4 },
-      { name: "Pepsico", url: "https://pepsico.com", categoryId: fmcgCategory.id, logo: "pepsico.com", order: 5 },
+      { name: "Boostogether", url: "https://boostogether.com", categoryId: techCategory.id, logo: "placeholder", order: 1 },
+      { name: "Hyland", url: "https://hyland.com", categoryId: techCategory.id, logo: "placeholder", order: 2 },
+      { name: "RobinFood", url: "https://robinfood.com", categoryId: techCategory.id, logo: "placeholder", order: 3 },
     ];
 
     for (const client of clientsData) {
@@ -52,13 +49,13 @@ export async function POST(req: Request) {
       }
     }
 
-    // 3. Seed Insights (Articles)
     const articlesData = [
       {
         title: "El futuro de las Juntas Directivas y la Inteligencia Artificial",
         slug: "futuro-juntas-directivas-ia",
         content: "La adopción tecnológica ya no es exclusiva de las gerencias de TI. Hoy, una Junta Directiva que no entiende el impacto de la Inteligencia Artificial está exponiendo su organización a un riesgo sistémico. Según estudios recientes...",
         excerpt: "Una reflexión sobre por qué el gobierno corporativo necesita marcos de supervisión cognitiva de urgencia.",
+        image: "placeholder",
         published: true,
         authorId: systemUser.id
       },
@@ -67,6 +64,16 @@ export async function POST(req: Request) {
         slug: "growth-system-mas-alla-growth-hacking",
         content: "Durante la última década la industria se obsesionó con el táctico del embudo (funnel optimization). Sin embargo, el verdadero crecimiento escalable y defendible se da cuando integramos la marca, el producto y las tecnologías en un modelo operativo.",
         excerpt: "Cómo diseñar un ecosistema en lugar de depender de micro-optimizaciones puntuales.",
+        image: "placeholder",
+        published: true,
+        authorId: systemUser.id
+      },
+      {
+        title: "Estrategia Digital: El puente entre el negocio y la tecnología",
+        slug: "estrategia-digital-puente",
+        content: "La brecha entre la estrategia de negocio y la implementación tecnológica sigue siendo el principal obstáculo para la transformación digital. Cerramos esta brecha alineando objetivos de negocio con capacidades tecnológicas concretas.",
+        excerpt: "Cómo alinear objetivos de negocio con capacidades tecnológicas para una transformación efectiva.",
+        image: "placeholder",
         published: true,
         authorId: systemUser.id
       }
