@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
-import { requireRole } from "@/lib/rbac";
 
 export default async function AdminLayout({ 
   children,
@@ -11,9 +10,6 @@ export default async function AdminLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params;
-
-  // Global Auth protection for ALL admin routes to at least be a member
-  await requireRole(["super_admin", "admin", "team_leader", "member"]);
 
   let version = "unknown";
   try {
