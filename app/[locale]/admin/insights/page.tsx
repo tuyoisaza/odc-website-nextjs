@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { deleteArticle } from "@/lib/actions";
+import type { Article } from "@prisma/client";
 
 export default async function AdminInsightsPage() {
   const articles = await prisma.article.findMany({
