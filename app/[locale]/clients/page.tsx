@@ -1,26 +1,33 @@
 import { getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
+import { ClientLogo } from "@/components/ClientLogo";
 
 export default async function ClientsPage() {
   const t = await getTranslations("Clients");
 
-  const categories = await prisma.clientCategory.findMany({
-    orderBy: { order: "asc" },
-    include: {
-      clients: {
-        orderBy: { order: "asc" }
-      }
-    }
-  });
+  let industries: { name: string; clients: { name: string; url: string; logo: string | null }[] }[] = [];
 
-  const industries = categories.map(cat => ({
-    name: cat.name,
-    clients: cat.clients.map(cli => ({
-      name: cli.name,
-      url: cli.url || "#",
-      logo: cli.logo
-    }))
-  }));
+  try {
+    const categories = await prisma.clientCategory.findMany({
+      orderBy: { order: "asc" },
+      include: {
+        clients: {
+          orderBy: { order: "asc" }
+        }
+      }
+    });
+
+    industries = categories.map(cat => ({
+      name: cat.name,
+      clients: cat.clients.map(cli => ({
+        name: cli.name,
+        url: cli.url || "#",
+        logo: cli.logo
+      }))
+    }));
+  } catch (err) {
+    console.error("Failed to load clients:", err);
+  }
 
   return (
     <main className="container" style={{ padding: "6rem 0" }}>
@@ -64,18 +71,7 @@ export default async function ClientsPage() {
               {ind.clients.map((c, j) => (
                 <a key={j} href={c.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className="client-card">
-                    {c.logo ? (
-                      <img 
-                         src={`https://logo.clearbit.com/${c.logo}`} 
-                         alt={`${c.name} logo`} 
-                         style={{ width: "64px", height: "64px", objectFit: "contain" }} 
-                         onError={(e) => { e.currentTarget.style.display = 'none'; }} 
-                      />
-                    ) : (
-                      <div style={{ width: "64px", height: "64px", borderRadius: "50%", background: "var(--border)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.5rem", color: "var(--muted)" }}>
-                        {c.name.charAt(0)}
-                      </div>
-                    )}
+                    <ClientLogo name={c.name} logo={c.logo} />
                     {c.name}
                   </div>
                 </a>
