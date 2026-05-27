@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 
 export default async function ArticlePage({ params }: { params: { locale: string, slug: string } }) {
-  const article = await prisma.article.findUnique({
+  const article = await prisma.article.findFirst({
     where: { slug: params.slug, published: true }
   });
 
@@ -33,7 +33,7 @@ export default async function ArticlePage({ params }: { params: { locale: string
       <div style={{ lineHeight: 1.8, fontSize: "1.1rem" }}>
         {/* En una app realista, usaríamos un parser de Markdown (e.g. react-markdown).
             Por simplicidad, estamos renderizando texto con splits por saltos de línea. */}
-        {article.content.split('\n').map((paragraph, idx) => (
+        {article.content.split('\n').map((paragraph: string, idx: number) => (
           <p key={idx} style={{ marginBottom: "1.5rem" }}>
             {paragraph}
           </p>
