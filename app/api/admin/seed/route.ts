@@ -23,23 +23,44 @@ export async function POST(req: Request) {
       });
     }
 
-    // 2. Seed Client Categories & Clients
-    const techCategory = await prisma.clientCategory.upsert({
-      where: { name: "Tecnología y Startups" },
-      update: {},
-      create: { name: "Tecnología y Startups", order: 1 }
-    });
-
-    const fmcgCategory = await prisma.clientCategory.upsert({
-      where: { name: "Consumo Masivo y Retail" },
-      update: {},
-      create: { name: "Consumo Masivo y Retail", order: 2 }
-    });
+    // 2. Seed Client Categories & Clients (from ODC Credenciales PDF)
+    const catBebidas = await prisma.clientCategory.upsert({ where: { name: "Bebidas" }, update: {}, create: { name: "Bebidas", order: 1 } });
+    const catFlores = await prisma.clientCategory.upsert({ where: { name: "Flores" }, update: {}, create: { name: "Flores", order: 2 } });
+    const catTecnologia = await prisma.clientCategory.upsert({ where: { name: "Tecnología" }, update: {}, create: { name: "Tecnología", order: 3 } });
+    const catTransporte = await prisma.clientCategory.upsert({ where: { name: "Transporte" }, update: {}, create: { name: "Transporte", order: 4 } });
+    const catManufactura = await prisma.clientCategory.upsert({ where: { name: "Manufactura y Energía" }, update: {}, create: { name: "Manufactura y Energía", order: 5 } });
+    const catSalud = await prisma.clientCategory.upsert({ where: { name: "Salud y Cuidado Personal" }, update: {}, create: { name: "Salud y Cuidado Personal", order: 6 } });
+    const catAlimentos = await prisma.clientCategory.upsert({ where: { name: "Alimentos y Retail" }, update: {}, create: { name: "Alimentos y Retail", order: 7 } });
+    const catSeguros = await prisma.clientCategory.upsert({ where: { name: "Seguros" }, update: {}, create: { name: "Seguros", order: 8 } });
+    const catSinFinesLucro = await prisma.clientCategory.upsert({ where: { name: "Sin fines de lucro" }, update: {}, create: { name: "Sin fines de lucro", order: 9 } });
 
     const clientsData = [
-      { name: "Boostogether", url: "https://boostogether.com", categoryId: techCategory.id, logo: "placeholder", order: 1 },
-      { name: "Hyland", url: "https://hyland.com", categoryId: techCategory.id, logo: "placeholder", order: 2 },
-      { name: "RobinFood", url: "https://robinfood.com", categoryId: techCategory.id, logo: "placeholder", order: 3 },
+      { name: "AB InBev", url: "https://www.ab-inbev.com/", categoryId: catBebidas.id, logo: "placeholder", order: 1 },
+      { name: "Diageo", url: "https://www.diageo.com/", categoryId: catBebidas.id, logo: "placeholder", order: 2 },
+      { name: "Pepsico", url: "https://www.pepsico.com/", categoryId: catBebidas.id, logo: "placeholder", order: 3 },
+      { name: "Petalli / Blumelii", url: "https://www.blumelii.com/", categoryId: catFlores.id, logo: "placeholder", order: 1 },
+      { name: "Boostogether", url: "https://boostogether.com/", categoryId: catTecnologia.id, logo: "placeholder", order: 1 },
+      { name: "Hyland", url: "https://www.hyland.com/", categoryId: catTecnologia.id, logo: "placeholder", order: 2 },
+      { name: "RobinFood", url: "https://www.robinfood.com/", categoryId: catTecnologia.id, logo: "placeholder", order: 3 },
+      { name: "WOPP", url: "", categoryId: catTecnologia.id, logo: "placeholder", order: 4 },
+      { name: "Avianca", url: "https://www.avianca.com/", categoryId: catTransporte.id, logo: "placeholder", order: 1 },
+      { name: "Blu Logistics", url: "https://blulogistics.com/", categoryId: catTransporte.id, logo: "placeholder", order: 2 },
+      { name: "Cerámica Italia", url: "https://ceramicaitalia.com/", categoryId: catManufactura.id, logo: "placeholder", order: 1 },
+      { name: "Schneider Electric", url: "https://www.se.com/", categoryId: catManufactura.id, logo: "placeholder", order: 2 },
+      { name: "Motul", url: "https://www.motul.com/", categoryId: catManufactura.id, logo: "placeholder", order: 3 },
+      { name: "InSer (Fertility)", url: "https://www.inser.com.co/", categoryId: catSalud.id, logo: "placeholder", order: 1 },
+      { name: "Pfizer", url: "https://www.pfizer.com/", categoryId: catSalud.id, logo: "placeholder", order: 2 },
+      { name: "Merck", url: "https://www.merck.com/", categoryId: catSalud.id, logo: "placeholder", order: 3 },
+      { name: "C Botanique", url: "https://botanique.com.co/", categoryId: catSalud.id, logo: "placeholder", order: 4 },
+      { name: "Guaapa", url: "https://www.guaapa.com/", categoryId: catSalud.id, logo: "placeholder", order: 5 },
+      { name: "Sigma", url: "https://www.sigmafoods.com/", categoryId: catAlimentos.id, logo: "placeholder", order: 1 },
+      { name: "Higgs", url: "https://higgsfoods.com/", categoryId: catAlimentos.id, logo: "placeholder", order: 2 },
+      { name: "Mr Bricolage", url: "https://mr-bricolage.com/", categoryId: catAlimentos.id, logo: "placeholder", order: 3 },
+      { name: "Distribuciones DPJD", url: "https://www.dpjd.com/", categoryId: catAlimentos.id, logo: "placeholder", order: 4 },
+      { name: "Distribuciones La Integridad", url: "", categoryId: catAlimentos.id, logo: "placeholder", order: 5 },
+      { name: "Grupo Bolívar", url: "https://www.grupobolivar.com.co/", categoryId: catSeguros.id, logo: "placeholder", order: 1 },
+      { name: "Fundación Texmodas", url: "https://fundaciontexmodas.org.co/", categoryId: catSinFinesLucro.id, logo: "placeholder", order: 1 },
+      { name: "Cámara de Comercio de Cúcuta", url: "https://cccucuta.org.co/", categoryId: catSinFinesLucro.id, logo: "placeholder", order: 2 },
     ];
 
     for (const client of clientsData) {
