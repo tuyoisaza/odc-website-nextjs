@@ -2,7 +2,8 @@ import { getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
-export default async function InsightsPage({ params }: { params: { locale: string } }) {
+export default async function InsightsPage(props: { params: Promise<{ locale: string }> }) {
+  const { locale } = await props.params;
   const t = await getTranslations("Insights");
   
   const articles = await prisma.article.findMany({
@@ -20,14 +21,14 @@ export default async function InsightsPage({ params }: { params: { locale: strin
       <p style={{ marginBottom: "4rem", maxWidth: "600px" }}>{t("subtitle")}</p>
       
       <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
-        {articles.map((a) => (
+        {articles.map((a: { id: string; createdAt: Date; title: string; excerpt: string | null; slug: string }) => (
           <article key={a.id} style={{ paddingBottom: "4rem", borderBottom: "1px solid var(--border)" }}>
             <span style={{ color: "var(--accent)", fontSize: "0.8rem", fontWeight: 700 }}>
-              {new Date(a.createdAt).toLocaleDateString(params.locale === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'long' })}
+              {new Date(a.createdAt).toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'long' })}
             </span>
             <h2 style={{ fontSize: "2.5rem", margin: "1rem 0" }}>{a.title}</h2>
             <p style={{ maxWidth: "700px", marginBottom: "1rem" }}>{a.excerpt}</p>
-            <Link href={`/${params.locale}/insights/${a.slug}`}>
+            <Link href={`/${locale}/insights/${a.slug}`}>
               <button style={{ background: "transparent", color: "var(--foreground)", padding: "0.5rem 1rem", border: "1px solid var(--border)", borderRadius: "0.5rem", cursor: "pointer" }}>
                 {t("readMore")}
               </button>
