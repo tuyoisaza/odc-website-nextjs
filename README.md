@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+Production startup does not modify the database schema. Read the [database operations runbook](docs/database-operations.md) before a rollout or any schema operation. Run `npm run test:startup` to check this safety contract; `npm run db:schema:validate` validates the schema configuration only.
+
 ## Getting Started
 
 First, run the development server:
