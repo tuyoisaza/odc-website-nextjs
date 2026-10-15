@@ -1,11 +1,13 @@
 "use client";
 
 import { signIn } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
+import { adminCallbackPath } from "@/lib/auth-navigation";
 
 export default function LoginPage() {
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/es/admin/insights";
+  const { locale } = useParams<{ locale: string }>();
+  const callbackUrl = adminCallbackPath(locale, searchParams.get("callbackUrl"));
 
   return (
     <main style={{ 

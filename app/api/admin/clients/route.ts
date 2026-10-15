@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { getApiRoleError } from "@/lib/rbac";
 
 export async function GET() {
   try {
@@ -17,6 +18,8 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+  const accessError = await getApiRoleError(["super_admin", "admin"]);
+  if (accessError) return accessError;
   try {
     const body = await req.json();
     const { name, logo, url, categoryId, order } = body;
