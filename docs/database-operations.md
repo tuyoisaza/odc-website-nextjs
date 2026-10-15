@@ -1,4 +1,4 @@
-# Database operations and startup safety (v1.2.31)
+# Database operations and startup safety (v1.2.32)
 
 ## Scope and decision
 
@@ -34,21 +34,31 @@ No production database was inspected or changed during preparation.
   generated diff SQL was executed and no production connection was used.
 - Build used a separate disposable SQLite file explicitly provisioned from the
   current schema with `prisma db push --skip-generate` (no data-loss flag).
-  `npm run build` generated Prisma Client, then failed on a Windows Turbopack
-  junction error (OS error 80). The supported alternative
-  `npm run build -- --webpack`, with approved access to Google Fonts, compiled
-  successfully but failed Next's TypeScript route checks: exported `authOptions`
-  in `app/api/auth/[...nextauth]/route.ts` is incompatible with allowed route
-  exports. That source is identical to base `814021c`; auth code was not changed
-  by this startup-safety PR. A complete production build has NOT passed.
-  Next also inferred a parent workspace root because of an external lockfile.
+  Initial attempts encountered a Windows junction issue, network restrictions,
+  and then a preexisting invalid route export: `authOptions` in
+  `app/api/auth/[...nextauth]/route.ts`, already present at base `814021c`.
+  v1.2.32 moves those shared options unchanged to `lib/auth.ts`; route, RBAC,
+  and audit code import that ordinary module. Providers, session callback,
+  adapter, login page, roles and permission logic are unchanged. Direct source
+  comparisons confirmed identical option contents and import-only RBAC/audit
+  changes. Targeted ESLint on all four affected auth files passed.
+- After that extraction, the default `npm run build` (Turbopack, Prisma Client
+  generation and Next TypeScript checks included) passed completely with approved
+  access to Google Fonts. No type checks or other controls were disabled.
+  Next still warns about an inferred parent workspace root due to an external
+  lockfile and the existing middleware convention; neither blocked the build.
+- The generated standalone server was started locally on loopback using disposable
+  SQLite. GET `/en`, `/es`, `/pt`, and `/en/insights` returned 200; database SHA-256
+  was unchanged across startup and those read-only requests. Server was stopped
+  afterwards. Authentication runtime was not validated: a local providers request
+  returned 500 with `NO_SECRET` because this isolated environment has no configured
+  NextAuth secret. No new credentials were created and no external login occurred.
 - Container execution remains unverified: Docker and Podman CLIs are unavailable;
   WSL inventory returns `Wsl/E_ACCESSDENIED`. No container engine was installed
-  and no controls were disabled. Minimum next steps are to fix/review the existing
-  auth configuration export (move shared options to an ordinary module and update
-  consumers), rerun the default build in an isolated supported environment, then
-  build/run the Dockerfile against a disposable database with an available engine.
-  Application smoke tests and a production restore rehearsal remain pending.
+  and no controls were disabled. Build/run the Dockerfile against disposable SQLite
+  in an environment with an available engine. Full auth/admin/CRM smoke coverage
+  with approved isolated configuration and a production restore rehearsal remain
+  pending. Local standalone checks do not verify Linux/Alpine container behavior.
 - Read-only Railway `describe_service` reported production tracking `main`, no
   staged changes, a `/data` volume, no explicit start/pre-deploy command in the
   returned config, and latest deployment `89643ea4-b4bd-46ea-a557-0e63d6d34762`
