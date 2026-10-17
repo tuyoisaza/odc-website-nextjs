@@ -24,7 +24,8 @@
     "readMore": "Leer Artículo"
   },
   "Clients": {
-    "title": "Marcas que han confiado en nuestro <partners>Talento</partners>"
+    "title": "Marcas que han confiado en nuestro <partners>Talento</partners>",
+    "logoInput": "Logo (ruta local o URL de imagen; vacío usa el logo de marca)"
   },
   "Contact": {
     "title": "Hablemos de <systems>Sistemas</systems>.",

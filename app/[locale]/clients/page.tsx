@@ -1,11 +1,12 @@
 import { getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import { ClientLogo } from "@/components/ClientLogo";
+import { getClientUrl } from "@/lib/client-branding";
 
 export default async function ClientsPage() {
   const t = await getTranslations("Clients");
 
-  let industries: { name: string; clients: { name: string; url: string; logo: string | null }[] }[] = [];
+  let industries: { name: string; clients: { name: string; url: string | undefined; logo: string | null }[] }[] = [];
 
   try {
     const categories = await prisma.clientCategory.findMany({
@@ -17,11 +18,11 @@ export default async function ClientsPage() {
       }
     });
 
-    industries = categories.map(cat => ({
+    industries = categories.filter(cat => cat.clients.length > 0).map(cat => ({
       name: cat.name,
       clients: cat.clients.map(cli => ({
         name: cli.name,
-        url: cli.url || "#",
+        url: getClientUrl(cli.name, cli.url),
         logo: cli.logo
       }))
     }));
@@ -47,7 +48,6 @@ export default async function ClientsPage() {
           gap: 1rem;
           height: 100%;
           transition: transform 0.2s, box-shadow 0.2s;
-          cursor: pointer;
         }
         .client-card:hover {
           transform: translateY(-5px);
@@ -55,7 +55,7 @@ export default async function ClientsPage() {
         }
       `}</style>
 
-      <h1 style={{ fontSize: "3.5rem", marginBottom: "4rem" }}>
+      <h1 style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)", marginBottom: "4rem" }}>
         {t.rich("title", {
           partners: (chunks) => <span className="gradient-text">{chunks}</span>
         })}
@@ -67,15 +67,13 @@ export default async function ClientsPage() {
             <h2 style={{ fontSize: "1.2rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "2rem", borderBottom: "1px solid var(--border)", paddingBottom: "0.5rem" }}>
               {ind.name}
             </h2>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "2rem" }}>
-              {ind.clients.map((c, j) => (
-                <a key={j} href={c.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <div className="client-card">
-                    <ClientLogo name={c.name} logo={c.logo} />
-                    {c.name}
-                  </div>
-                </a>
-              ))}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 200px), 1fr))", gap: "2rem" }}>
+              {ind.clients.map((c, j) => {
+                const card = <div className="client-card"><ClientLogo name={c.name} logo={c.logo} />{c.name}</div>;
+                return c.url ? (
+                  <a key={j} href={c.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>{card}</a>
+                ) : <div key={j}>{card}</div>;
+              })}
             </div>
           </div>
         ))}
