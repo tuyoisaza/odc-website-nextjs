@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { ClientLogo } from "@/components/ClientLogo";
+import { useTranslations } from "next-intl";
 
 interface ClientItem {
   id: string;
@@ -23,6 +25,7 @@ interface CategoryItem {
 }
 
 export default function AdminClientsPage() {
+  const t = useTranslations("Clients");
   const [activeTab, setActiveTab] = useState<"clients" | "categories">("clients");
   const [categories, setCategories] = useState<CategoryItem[]>([]);
   const [clients, setClients] = useState<ClientItem[]>([]);
@@ -217,7 +220,7 @@ export default function AdminClientsPage() {
               <input value={clientForm.url} onChange={e => setClientForm({ ...clientForm, url: e.target.value })} style={{ padding: "0.5rem", borderRadius: "0.25rem", border: "1px solid var(--border)", background: "var(--background)", color: "var(--foreground)" }} />
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              <label>Logo (Dominio, ej: adidas.com)</label>
+              <label>{t("logoInput")}</label>
               <input value={clientForm.logo} onChange={e => setClientForm({ ...clientForm, logo: e.target.value })} style={{ padding: "0.5rem", borderRadius: "0.25rem", border: "1px solid var(--border)", background: "var(--background)", color: "var(--foreground)" }} />
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -258,11 +261,7 @@ export default function AdminClientsPage() {
               {clients.map((cli) => (
                 <tr key={cli.id} style={{ borderBottom: "1px solid var(--border)" }}>
                   <td style={{ padding: "1rem" }}>
-                    {cli.logo ? (
-                      <img src={`https://logo.clearbit.com/${cli.logo}`} alt={cli.name} style={{ width: "32px", height: "32px", objectFit: "contain" }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-                    ) : (
-                      <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: "var(--border)", display: "flex", alignItems: "center", justifyContent: "center" }}>{cli.name.charAt(0)}</div>
-                    )}
+                    <ClientLogo name={cli.name} logo={cli.logo} compact />
                   </td>
                   <td style={{ padding: "1rem" }}>{cli.name}</td>
                   <td style={{ padding: "1rem" }}>{cli.url}</td>

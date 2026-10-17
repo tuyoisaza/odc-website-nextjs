@@ -1,0 +1,293 @@
+[
+  {
+    "name": "Boostogether",
+    "url": "https://boostogether.com",
+    "logos": [
+      {
+        "src": "/clients/boostogether.svg",
+        "background": "claro",
+        "label": "Boostogether"
+      }
+    ]
+  },
+  {
+    "name": "Hyland",
+    "url": "https://hyland.com",
+    "logos": [
+      {
+        "src": "/clients/hyland.png",
+        "background": "claro",
+        "label": "Hyland"
+      }
+    ]
+  },
+  {
+    "name": "RobinFood",
+    "url": "https://www.robinfood.com/",
+    "logos": [
+      {
+        "src": "/clients/robinfood.png",
+        "background": "claro",
+        "label": "RobinFood"
+      }
+    ]
+  },
+  {
+    "name": "AB InBev",
+    "url": "https://www.ab-inbev.com/",
+    "logos": [
+      {
+        "src": "/clients/ab-inbev.svg",
+        "background": "oscuro",
+        "label": "AB InBev"
+      }
+    ]
+  },
+  {
+    "name": "Diageo",
+    "url": "https://www.diageo.com/",
+    "logos": [
+      {
+        "src": "/clients/diageo.svg",
+        "background": "claro",
+        "label": "Diageo"
+      }
+    ]
+  },
+  {
+    "name": "Pepsico",
+    "url": "https://www.pepsico.com/",
+    "logos": [
+      {
+        "src": "/clients/pepsico.png",
+        "background": "oscuro",
+        "label": "Pepsico"
+      }
+    ]
+  },
+  {
+    "name": "Petalli / Blumelii",
+    "url": "https://www.blumelii.com/",
+    "logos": [
+      {
+        "src": "/clients/petalli-blumelii.png",
+        "background": "claro",
+        "label": "Petalli / Blumelii"
+      },
+      {
+        "src": "/clients/blumelii.jpg",
+        "background": "claro",
+        "label": "Blumelii"
+      }
+    ]
+  },
+  {
+    "name": "WOPP",
+    "url": "https://linktr.ee/wopp.co",
+    "logos": [
+      {
+        "src": "/clients/wopp.jpg",
+        "background": "claro",
+        "label": "WOPP"
+      }
+    ]
+  },
+  {
+    "name": "Avianca",
+    "url": "https://www.avianca.com/",
+    "logos": [
+      {
+        "src": "/clients/avianca.png",
+        "background": "claro",
+        "label": "Avianca"
+      }
+    ]
+  },
+  {
+    "name": "Blu Logistics",
+    "url": "https://blulogistics.com/",
+    "logos": [
+      {
+        "src": "/clients/blu-logistics.svg",
+        "background": "claro",
+        "label": "Blu Logistics"
+      }
+    ]
+  },
+  {
+    "name": "Cerámica Italia",
+    "url": "https://ceramicaitalia.com/",
+    "logos": [
+      {
+        "src": "/clients/ceramica-italia.png",
+        "background": "claro",
+        "label": "Cerámica Italia"
+      }
+    ]
+  },
+  {
+    "name": "Schneider Electric",
+    "url": "https://www.se.com/",
+    "logos": [
+      {
+        "src": "/clients/schneider-electric.svg",
+        "background": "oscuro",
+        "label": "Schneider Electric"
+      }
+    ]
+  },
+  {
+    "name": "Motul",
+    "url": "https://www.motul.com/",
+    "logos": [
+      {
+        "src": "/clients/motul.png",
+        "background": "claro",
+        "label": "Motul"
+      }
+    ]
+  },
+  {
+    "name": "InSer (Fertility)",
+    "url": "https://www.inser.com.co/",
+    "logos": [
+      {
+        "src": "/clients/inser-fertility.png",
+        "background": "claro",
+        "label": "InSer (Fertility)"
+      }
+    ]
+  },
+  {
+    "name": "Pfizer",
+    "url": "https://www.pfizer.com/",
+    "logos": [
+      {
+        "src": "/clients/pfizer.png",
+        "background": "claro",
+        "label": "Pfizer"
+      }
+    ]
+  },
+  {
+    "name": "Merck",
+    "url": "https://www.merck.com/",
+    "logos": [
+      {
+        "src": "/clients/merck.svg",
+        "background": "claro",
+        "label": "Merck"
+      }
+    ]
+  },
+  {
+    "name": "C Botanique",
+    "url": "https://botanique.com.co/",
+    "logos": [
+      {
+        "src": "/clients/c-botanique.png",
+        "background": "claro",
+        "label": "C Botanique"
+      }
+    ]
+  },
+  {
+    "name": "Guaapa",
+    "url": "https://www.guaapa.com/",
+    "logos": [
+      {
+        "src": "/clients/guaapa.png",
+        "background": "claro",
+        "label": "Guaapa"
+      }
+    ]
+  },
+  {
+    "name": "Sigma",
+    "url": "https://www.sigmafoods.com/",
+    "logos": [
+      {
+        "src": "/clients/sigma.png",
+        "background": "claro",
+        "label": "Sigma"
+      }
+    ]
+  },
+  {
+    "name": "Higgs",
+    "url": "https://higgsfoods.com/",
+    "logos": [
+      {
+        "src": "/clients/higgs.png",
+        "background": "oscuro",
+        "label": "Higgs"
+      }
+    ]
+  },
+  {
+    "name": "Mr Bricolage",
+    "url": "https://mr-bricolage.com/",
+    "logos": [
+      {
+        "src": "/clients/mr-bricolage.webp",
+        "background": "claro",
+        "label": "Mr Bricolage"
+      }
+    ]
+  },
+  {
+    "name": "Distribuciones DPJD",
+    "url": "https://www.dpjd.com/",
+    "logos": [
+      {
+        "src": "/clients/distribuciones-dpjd.png",
+        "background": "claro",
+        "label": "Distribuciones DPJD"
+      }
+    ]
+  },
+  {
+    "name": "Distribuciones La Integridad",
+    "url": "https://laintegridad.com/",
+    "logos": [
+      {
+        "src": "/clients/distribuciones-la-integridad.png",
+        "background": "claro",
+        "label": "Distribuciones La Integridad"
+      }
+    ]
+  },
+  {
+    "name": "Grupo Bolívar",
+    "url": "https://www.grupobolivar.com.co/",
+    "logos": [
+      {
+        "src": "/clients/grupo-bolivar.png",
+        "background": "claro",
+        "label": "Grupo Bolívar"
+      }
+    ]
+  },
+  {
+    "name": "Fundación Texmodas",
+    "url": "https://fundaciontexmodas.org.co/",
+    "logos": [
+      {
+        "src": "/clients/fundacion-texmodas.png",
+        "background": "claro",
+        "label": "Fundación Texmodas"
+      }
+    ]
+  },
+  {
+    "name": "Cámara de Comercio de Cúcuta",
+    "url": "https://cccucuta.org.co/",
+    "logos": [
+      {
+        "src": "/clients/camara-de-comercio-de-cucuta.png",
+        "background": "claro",
+        "label": "Cámara de Comercio de Cúcuta"
+      }
+    ]
+  }
+]

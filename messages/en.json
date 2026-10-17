@@ -24,7 +24,8 @@
     "readMore": "Read Article"
   },
   "Clients": {
-    "title": "Our <partners>Partners</partners>"
+    "title": "Our <partners>Partners</partners>",
+    "logoInput": "Logo (local path or image URL; leave blank to use the brand logo)"
   },
   "Contact": {
     "title": "Let's talk about <systems>Systems</systems>.",

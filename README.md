@@ -36,3 +36,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Client logos
+
+The public clients page and admin preview share the [local logo resolver](lib/client-branding.ts), [brand mapping](lib/client-brands.json), and [ClientLogo component](components/ClientLogo.tsx). The [asset inventory and sources](docs/client-logos.md) links every file in `public/clients/`. Known placeholder records display local logos without reseeding the database. The public [clients page](app/[locale]/clients/page.tsx) hides empty categories and uses the verified WOPP / La Integridad links when no link is configured.
+
+Run `npm run test:client-logos` for the [client logo regression checks](tests/client-branding.test.cjs). The admin image field label is translated in [Spanish](messages/es.json), [English](messages/en.json) and [Portuguese](messages/pt.json).
